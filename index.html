@@ -1,12 +1,30 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>weather App</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather App</title>
+  <link rel="stylesheet" href="./style/style.css" />
 </head>
-<link rel="stylesheet" href="./style/">
 <body>
-    
-    <script src="./script/script.js"></script>
+  <div class="weather-app">
+    <h1>Weather App</h1>
+    <h2>Know Before You Go</h2>
+    <div class="search-box">
+      <input type="text" id="city-input" placeholder="Enter city..." />
+      <button id="search-btn">🔍</button>
+    </div>
+    <div class="weather-info hidden" id="weather-info">
+      <h2 id="city-name"></h2>
+      <img id="weather-icon" alt="Weather Icon" />
+      <p id="description"></p>
+      <p><span id="temp"></span>°C</p>
+      <p>Humidity: <span id="humidity"></span>%</p> 
+      <p>Wind: <span id="wind"></span> km/h</p>
+    </div>
+    <div class="error-message hidden" id="error-message">City not found. Try again!</div>
+    <h2>Stay Sky Wise</h2>
+  </div>
+  <script src="./script/script.js"></script>
 </body>
 </html>
