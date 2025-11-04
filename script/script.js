@@ -1,4 +1,6 @@
-const API_KEY = "11845b16191d4e970987e59662f49847";
+// Load API key from .env file
+// Make sure your .env file contains: VITE_API_KEY=your_openweather_api_key
+const API_KEY = import.meta.env.VITE_API_KEY;
 
 const cityInput = document.getElementById("city-input");
 const searchBtn = document.getElementById("search-btn");
