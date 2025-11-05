@@ -15,21 +15,26 @@
       <input type="text" id="city-input" placeholder="Enter city" />
       <button id="search-btn">🔍</button>
     </div>
+
     <div class="weather-info hidden" id="weather-info">
       <h2 id="city-name"></h2>
       <img id="weather-icon" alt="Weather Icon" />
       <p id="description"></p>
       <p><span id="temp"></span>°C</p>
-      <p>Humidity: <span id="humidity"></span>%</p> 
+      <p>Humidity: <span id="humidity"></span>%</p>
       <p>Wind: <span id="wind"></span> km/h</p>
     </div>
+
     <div class="error-message hidden" id="error-message">
       City not found. Try again or check if it is well spelled!
     </div>
+
     <button class="refreshBtn">Refresh</button>
     <h2>Stay Sky Wise</h2>
   </div>
 
+  <!-- Load config.js before main script -->
+  <script src="./script/config.js"></script>
   <script src="./script/script.js"></script>
 </body>
 </html>

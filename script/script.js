@@ -1,7 +1,4 @@
-// Load API key from .env file
-// Make sure your .env file contains: VITE_API_KEY=your_openweather_api_key
-const API_KEY = import.meta.env.VITE_API_KEY;
-
+// Get DOM elements
 const cityInput = document.getElementById("city-input");
 const searchBtn = document.getElementById("search-btn");
 const refreshBtn = document.querySelector(".refreshBtn");
@@ -14,10 +11,12 @@ const icon = document.getElementById("weather-icon");
 const weatherInfo = document.getElementById("weather-info");
 const errorMessage = document.getElementById("error-message");
 
+// Local Storage helpers
 const saveLastCity = city => localStorage.setItem("lastCity", city);
 const getLastCity = () => localStorage.getItem("lastCity") || "";
 
-const setBackground = weather => {
+// Dynamic background change
+const setBackground = (weather) => {
   let imageUrl = "";
 
   switch (weather) {
@@ -49,6 +48,7 @@ const setBackground = weather => {
   document.body.style.backgroundImage = imageUrl;
 };
 
+// Fetch weather data
 const fetchWeather = async (city) => {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
 
@@ -67,6 +67,7 @@ const fetchWeather = async (city) => {
   }
 };
 
+// Update UI
 const updateWeatherUI = (data) => {
   cityName.textContent = data.name;
   description.textContent = data.weather[0].description;
@@ -78,6 +79,7 @@ const updateWeatherUI = (data) => {
   setBackground(data.weather[0].main);
 };
 
+// Event listeners
 searchBtn.addEventListener("click", () => {
   const city = cityInput.value.trim();
   if (city) fetchWeather(city);
