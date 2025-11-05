@@ -1,7 +1,4 @@
-# Ignore the API key file
 script/config.js
 
-# Optional: ignore system or build files
 .DS_Store
-node_modules/
 dist/
